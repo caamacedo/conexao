@@ -1,0 +1,343 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+:root {
+    --primary-color: #0d6efd;
+    --primary-hover: #0a58ca;
+    --danger-color: #dc3545;
+    --danger-hover: #b02a37;
+    --bg-color: #f0f2f5;
+    --text-color: #333;
+    --white: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --radius: 10px;
+    --transition: all 0.3s ease;
+}
+ 
+/* ===========================================
+ESTILO GERAL
+=========================================== */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #e3e9f1, #f4f7fa);
+    color: #333;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+ 
+/* ===========================================
+MENU
+=========================================== */
+nav.menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #0d6efd;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    gap: 15px;
+    background: var(--primary-color);
+    padding: 0 20px;
+    height: 60px;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+ 
+.dropbtn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 15px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: .3s;
+    transition: var(--transition);
+}
+ 
+.dropbtn:hover {
+    background: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.2);
+}
+ 
+.dropdown {
+    position: relative;
+}
+ 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #fff;
+    min-width: 180px;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    background: var(--white);
+    min-width: 200px;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    overflow: hidden;
+    z-index: 100;
+    top: 100%;
+}
+ 
+.dropdown-content a {
+    display: block;
+    padding: 12px;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+ 
+.dropdown-content a:hover {
+    background: #f0f0f0;
+    background: #f8f9fa;
+    color: var(--primary-color);
+}
+ 
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+ 
+.menu .logout {
+    background: #dc3545;
+    padding: 10px 15px;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+ 
+.menu .logout:hover {
+    background: #bb2d3b;
+}
+ 
+/* ===========================================
+CONTAINERS
+=========================================== */
+.container,
+.card-editar,
+.lista-container {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    animation: fadeIn .3s ease;
+}
+ 
+.container {
+    max-width: 450px;
+    margin: 60px auto;
+    padding: 35px;
+}
+ 
+.card-editar {
+    max-width: 450px;
+    margin: 60px auto;
+    padding: 35px;
+}
+ 
+.lista-container {
+    max-width: 950px;
+    margin: 50px auto;
+    padding: 25px;
+}
+ 
+/* ===========================================
+TÍTULOS
+=========================================== */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 26px;
+    color: #222;
+}
+ 
+/* ===========================================
+FORMULÁRIOS
+=========================================== */
+form input,
+form select {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: 1px solid #c9c9c9;
+    font-size: 16px;
+    background: #f8f9fa;
+}
+ 
+form input:focus,
+form select:focus {
+    border-color: #0d6efd;
+    background: #ffffff;
+    box-shadow: 0 0 4px rgba(13,110,253,0.4);
+    outline: none;
+}
+ 
+/* Botão padrão de formulário */
+.btn-form {
+    width: 100%;
+    display: block;
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+    background: #0d6efd;
+    color: #fff;
+    background: var(--primary-color);
+    color: var(--white);
+    font-size: 17px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: .3s;
+    transition: var(--transition);
+    font-weight: bold;
+}
+ 
+.btn-form:hover {
+    background: #0b5ed7;
+    background: var(--primary-hover);
+}
+ 
+/* ===========================================
+BOTÕES DE AÇÃO (EDITAR, EXCLUIR, VOLTAR ETC)
+=========================================== */
+.btn-editar,
+.btn-excluir,
+.btn-voltar,
+.btn-acao {
+    display: inline-block;
+    width: auto;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .2s;
+    font-size: 14px;
+    cursor: pointer;
+}
+ 
+.btn-editar {
+    background: #0d6efd;
+    color: #fff;
+    background: var(--primary-color);
+    color: var(--white);
+}
+ 
+.btn-editar:hover {
+    background: #0b5ed7;
+    background: var(--primary-hover);
+}
+ 
+.btn-excluir {
+    background: #dc3545;
+    color: #fff;
+    background: var(--danger-color);
+    color: var(--white);
+}
+ 
+.btn-excluir:hover {
+    background: #bb2d3b;
+}
+ 
+.btn-voltar {
+    background: #555;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-bottom: 15px;
+}
+ 
+ 
+.btn-voltar:hover {
+    background: #333;
+}
+ 
+/* ===========================================
+TABELAS
+=========================================== */
+.tabela-usuarios {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+ 
+.tabela-usuarios thead {
+    background: #0d6efd;
+    color: #fff;
+    background: var(--primary-color);
+    color: var(--white);
+}
+ 
+.tabela-usuarios th,
+.tabela-usuarios td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #dcdcdc;
+}
+ 
+.tabela-usuarios tr:hover {
+    background: #f5f8ff;
+}
+ 
+/* ===========================================
+IMAGENS
+=========================================== */
+img.capa {
+    width: 60px;
+    border-radius: 5px;
+}
+ 
+/* ===========================================
+MENSAGENS
+=========================================== */
+.sucesso {
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    color: #0f5132;
+    background: #d1e7dd;
+    border: 1px solid #badbcc;
+}
+ 
+.erro {
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    color: #842029;
+    background: #f8d7da;
+    border: 1px solid #f5c2c7;
+}
+ 
+/* ===========================================
+ANIMAÇÃO
+=========================================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
